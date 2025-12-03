@@ -1,7 +1,11 @@
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 url = "https://adventofcode.com/2025/day/1/input"
-session = "53616c7465645f5f9c542392b4a5bbe40f6c0981f2da44e717174d63b35beadd5954a512fcba5a95a00027216fa7e0cefbc116ad90c4bc6bdb508ed9259775d5"
+session = os.getenv("SESSION")
 num = 50
 count = 0
 response = requests.get(url, stream = True, cookies = {"session": session})
